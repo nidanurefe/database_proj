@@ -1,0 +1,157 @@
+{
+    "user_id": 123,
+    "visited_locations": [
+      {
+        "id": 1,
+        "name": "Louvre Museum",
+        "category": "museum",
+        "sub_category": "art museum",
+        "location": {
+          "city": "Paris",
+          "country": "France",
+          "coordinates": {
+            "lat": 48.8606,
+            "lon": 2.3376
+          }
+        },
+        "visited_date": "2023-06-15",
+        "notes": "The art collection is stunning!",
+        "photos": [
+          {
+            "url": "/images/louvre1.jpg",
+            "description": "Main entrance view"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Eiffel Tower",
+        "category": "landmark",
+        "location": {
+          "city": "Paris",
+          "country": "France",
+          "coordinates": {
+            "lat": 48.8584,
+            "lon": 2.2945
+          }
+        },
+        "visited_date": "2023-06-16",
+        "notes": "Amazing view of Paris from the top.",
+        "photos": [
+          {
+            "url": "/images/eiffel1.jpg",
+            "description": "View from the top"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Central Park",
+        "category": "park",
+        "location": {
+          "city": "New York",
+          "country": "USA",
+          "coordinates": {
+            "lat": 40.7851,
+            "lon": -73.9683
+          }
+        },
+        "visited_date": "2023-04-12",
+        "notes": "Beautiful spring day, lots of people jogging.",
+        "photos": [
+          {
+            "url": "/images/centralpark1.jpg",
+            "description": "Cherry blossoms in the park"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Balthazar Restaurant",
+        "category": "restaurant",
+        "location": {
+          "city": "New York",
+          "country": "USA",
+          "coordinates": {
+            "lat": 40.7223,
+            "lon": -73.9986
+          }
+        },
+        "visited_date": "2023-04-13",
+        "notes": "Great French cuisine!",
+        "photos": [
+          {
+            "url": "/images/balthazar.jpg",
+            "description": "Delicious dinner at Balthazar"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Statue of Liberty",
+        "category": "historical site",
+        "sub_category": "monument",
+        "location": {
+          "city": "New York",
+          "country": "USA",
+          "coordinates": {
+            "lat": 40.6892,
+            "lon": -74.0445
+          }
+        },
+        "visited_date": "2023-04-14",
+        "notes": "Iconic landmark, crowded but worth the visit.",
+        "photos": [
+          {
+            "url": "/images/statueofliberty.jpg",
+            "description": "View from the ferry"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Everest Base Camp",
+        "category": "nature",
+        "sub_category": "mountain",
+        "location": {
+          "city": "Sagarmatha National Park",
+          "country": "Nepal",
+          "coordinates": {
+            "lat": 28.0026,
+            "lon": 86.8528
+          }
+        },
+        "visited_date": "2022-10-05",
+        "notes": "Challenging hike but a rewarding experience!",
+        "photos": [
+          {
+            "url": "/images/everestbasecamp.jpg",
+            "description": "At the base camp with a view of Mt. Everest"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Broadway Show - Hamilton",
+        "category": "entertainment",
+        "sub_category": "theater",
+        "location": {
+          "city": "New York",
+          "country": "USA",
+          "coordinates": {
+            "lat": 40.7590,
+            "lon": -73.9845
+          }
+        },
+        "visited_date": "2023-04-14",
+        "notes": "Incredible performance! A must-see.",
+        "photos": [
+          {
+            "url": "/images/hamilton.jpg",
+            "description": "Broadway show poster"
+          }
+        ]
+      }
+    ]
+  }
+  

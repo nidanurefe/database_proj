@@ -4,43 +4,67 @@ import Layout from './layout';
 
 
 const Travelled = () => {
-    const [travelled, setTravelled] = useState([]);
-    const [selectedTravel, setSelectedTravel] = useState(null);
+  const [locations, setLocations] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState(null);
     
+    // useEffect(() => {
+    //     const token = localStorage.getItem('token');
+    //     axios.get('to-be-filled', {
+    //       headers: {
+    //         'Authorization': `Bearer ${token}`
+    //       }
+    //     })
+    //       .then(response => {
+    //         setTravelled(response.data.data);
+    //       })
+    //       .catch(error => {
+    //         console.error("There was an error fetching the travels!", error);
+    //       });
+    //   }, []);
+
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        axios.get('to-be-filled', {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        })
-          .then(response => {
-            setTravelled(response.data.data);
-          })
-          .catch(error => {
-            console.error("There was an error fetching the travels!", error);
-          });
-      }, []);
-
-      const handleTravelClick = (travel) => {
-        setSelectedTravel(travel);
+      const fetchData = async () => {
+        const response = await fetch('../public/response.json');
+        const data = await response.json();
+        console.log(data);
+        setLocations(data.visitedLocations);
       };
+      fetchData();
+  }, []);
 
-      const closeDetails = () => {
-        setSelectedTravel(null);
-      }
+      
+
+  const closeDetails = () => {
+    setSelectedLocation(null);
+  };
 
       return(
         <Layout>
-            <div className = "travel-list">
-                {travelled.map(travelled => (
-                    <div key={travelled.id} onClick={() => handleTravelClick(travelled)}>
-                        <h3>{travelled.title}</h3>
-                        <p>{travelled.city}</p>
-                    </div>
-                ))}
+            <div className="visited-locations">
+      {/* <h2>Visited Locations</h2> */}
+      <div className="locations-grid">
+        {locations.map((location, index) => (
+          <div
+            key={index}
+            className="location-card"
+            onClick={() => setSelectedLocation(location)}
+          >
+            <img src={location.image} alt={location.name} />
+            <p>{location.name}</p>
+          </div>
+        ))}
+      </div>
 
-            </div>
+      {selectedLocation && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeDetails}>&times;</span>
+            <h3>{selectedLocation.name}</h3>
+            <p>{selectedLocation.description}</p>
+          </div>
+        </div>
+      )}
+    </div>
         </Layout>
       )
 
