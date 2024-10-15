@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from './layout';
+import './styles/travelled.css';
 
 
 const Travelled = () => {
@@ -24,10 +25,10 @@ const Travelled = () => {
 
     useEffect(() => {
       const fetchData = async () => {
-        const response = await fetch('../public/response.json');
+        const response = await fetch('/response.json');
         const data = await response.json();
         console.log(data);
-        setLocations(data.visitedLocations);
+        setLocations(data.visited_locations );
       };
       fetchData();
   }, []);
@@ -49,7 +50,7 @@ const Travelled = () => {
             className="location-card"
             onClick={() => setSelectedLocation(location)}
           >
-            <img src={location.image} alt={location.name} />
+            <img src={location.photos[0].url} alt={location.name} />
             <p>{location.name}</p>
           </div>
         ))}
@@ -59,6 +60,7 @@ const Travelled = () => {
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeDetails}>&times;</span>
+            <img src={selectedLocation.photos[0].url} alt={selectedLocation.name}  style={{width: '100%'}}/>
             <h3>{selectedLocation.name}</h3>
             <p>{selectedLocation.description}</p>
           </div>
