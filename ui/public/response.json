@@ -39,7 +39,7 @@
         "notes": "Amazing view of Paris from the top.",
         "photos": [
           {
-            "url": "/images/eiffel1.jpg",
+            "url": "https://www.travelandleisure.com/thmb/SPUPzO88ZXq6P4Sm4mC5Xuinoik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eiffel-tower-paris-france-EIFFEL0217-6ccc3553e98946f18c893018d5b42bde.jpg",
             "description": "View from the top"
           }
         ]
@@ -60,7 +60,7 @@
         "notes": "Beautiful spring day, lots of people jogging.",
         "photos": [
           {
-            "url": "/images/centralpark1.jpg",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Southwest_corner_of_Central_Park%2C_looking_east%2C_NYC.jpg",
             "description": "Cherry blossoms in the park"
           }
         ]

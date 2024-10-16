@@ -3,7 +3,6 @@ import axios from 'axios';
 import Layout from './layout';
 import './styles/travelled.css';
 
-
 const Travelled = () => {
   const [locations, setLocations] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -12,7 +11,7 @@ const Travelled = () => {
     //     const token = localStorage.getItem('token');
     //     axios.get('to-be-filled', {
     //       headers: {
-    //         'Authorization': `Bearer ${token}`
+    //         'Authorization': Bearer ${token}
     //       }
     //     })
     //       .then(response => {
@@ -42,7 +41,7 @@ const Travelled = () => {
       return(
         <Layout>
             <div className="visited-locations">
-      {/* <h2>Visited Locations</h2> */}
+      <h2>Visited Locations</h2>
       <div className="locations-grid">
         {locations.map((location, index) => (
           <div
@@ -52,6 +51,8 @@ const Travelled = () => {
           >
             <img src={location.photos[0].url} alt={location.name} />
             <p>{location.name}</p>
+            <p className="category-badge">{location.category}</p>
+
           </div>
         ))}
       </div>
@@ -63,6 +64,11 @@ const Travelled = () => {
             <img src={selectedLocation.photos[0].url} alt={selectedLocation.name}  style={{width: '100%'}}/>
             <h3>{selectedLocation.name}</h3>
             <p>{selectedLocation.description}</p>
+            <p>{selectedLocation.location.city}</p>
+            <p>{selectedLocation.visited_date}</p>
+            <p>{selectedLocation.notes}</p>
+            <p className = "category-badge-inside">{selectedLocation.category}</p>
+   
           </div>
         </div>
       )}
