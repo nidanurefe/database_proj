@@ -5,6 +5,7 @@ import Travelled from './travelled';
 import ProfilePage from './profile';
 import JourneyInsights from './journey_insights';
 import FutureDestinations from './future_destinations';
+import AddNew from './addNew';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
       <Route path="/profile" element =  {<ProfilePage/>} />
       <Route path="/future-destinations" element = {<FutureDestinations/>}/>
       <Route path="/journey-insights" element = {<JourneyInsights/>} />
+      <Route path="/add-new" element = {<AddNew/>} /> 
     </Routes>
   </Router>
   );

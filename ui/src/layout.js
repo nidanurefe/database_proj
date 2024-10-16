@@ -10,7 +10,7 @@ import MapIcon from '@mui/icons-material/Map';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import LogoutIcon from '@mui/icons-material/Logout';
 import TourIcon from '@mui/icons-material/Tour';
-
+import AddLocationIcon from '@mui/icons-material/AddLocation';
 const Layout = ({ children }) => {
   const navigate = useNavigate(); 
 
@@ -42,6 +42,12 @@ const Layout = ({ children }) => {
             <a className="nav-link" href="/future-destinations">
               <TourIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
               <p>Future Destinations</p>
+            </a>
+          </li>
+          <li className="nav-link">
+            <a className="nav-link" href="/add-new">
+              <AddLocationIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
+              <p>Add New</p>
             </a>
           </li>
           <li className='nav-link' >
