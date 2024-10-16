@@ -3,6 +3,18 @@ import axios from 'axios';
 import Layout from './layout';
 import './styles/travelled.css';
 
+
+const categoryColors = {
+  'historical site': '#C331108E',
+  'nature': '#BDFFA1FF',
+  'entertainment': '#FFC107',
+  'restaurant': '#6F42C1',
+  'park': '#28A745',
+  'museum': '#007BFF',
+  'landmark': '#DC3545',
+};
+
+
 const Travelled = () => {
   const [locations, setLocations] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -51,7 +63,9 @@ const Travelled = () => {
           >
             <img src={location.photos[0].url} alt={location.name} />
             <p>{location.name}</p>
-            <p className="category-badge">{location.category}</p>
+            <p   style={{ backgroundColor: categoryColors[location.category] || '#483C83' }}
+
+            className="category-badge">{location.category}</p>
 
           </div>
         ))}
@@ -67,7 +81,10 @@ const Travelled = () => {
             <p>{selectedLocation.location.city}</p>
             <p>{selectedLocation.visited_date}</p>
             <p>{selectedLocation.notes}</p>
-            <p className = "category-badge-inside">{selectedLocation.category}</p>
+            <p
+              style={{ backgroundColor: categoryColors[selectedLocation.category] || '#483C83' }}
+
+            className = "category-badge-inside">{selectedLocation.category}</p>
    
           </div>
         </div>
