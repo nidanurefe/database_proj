@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/profile.css';
-import defaultProfilePic from './profile.jpg'; 
+import defaultProfilePic from './ai-nida.jpg'; 
 import axios from 'axios';
 
 const ProfilePage = () => {
@@ -98,7 +98,7 @@ const ProfilePage = () => {
     };
 
     const goToHomePage = () => {
-        navigate('/past-trips'); 
+        navigate('/favourite-movies'); 
     };
 
     return (

@@ -4,14 +4,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import './styles/layout.css';
 import logo from './logo.png';
-import defaultProfilePic from './profile.jpg';
-
-import MapIcon from '@mui/icons-material/Map';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import LogoutIcon from '@mui/icons-material/Logout';
+import defaultProfilePic from './ai-nida.jpg';
+import CameraRollIcon from '@mui/icons-material/CameraRoll';
+import PersonIcon from '@mui/icons-material/Person';import LogoutIcon from '@mui/icons-material/Logout';
 import TourIcon from '@mui/icons-material/Tour';
-import AddLocationIcon from '@mui/icons-material/AddLocation';
-const Layout = ({ children }) => {
+import AddCircleIcon from '@mui/icons-material/AddCircle';const Layout = ({ children }) => {
   const navigate = useNavigate(); 
 
   const handleLogout = () => {
@@ -27,26 +24,21 @@ const Layout = ({ children }) => {
         </a>
         <ul>
           <li className="nav-link" style={{ listStyle: 'none', display: 'flex' }}>
-            <a className="nav-link" href="/past-trips">
-              <MapIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
-              <p>Past Trips</p>
+            <a className="nav-link" href="/favourite-movies">
+              <CameraRollIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
+              <p>Favourite Movies</p>
             </a>
           </li>
           <li className="nav-link">
-            <a className="nav-link" href="/journey-insights">
-              <AutoGraphIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
-              <p>Journey Insights</p>
+            <a className="nav-link" href="/favourite-people">
+              <PersonIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
+              <p>Favourite People</p>
             </a>
           </li>
-          <li className="nav-link">
-            <a className="nav-link" href="/future-destinations">
-              <TourIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
-              <p>Future Destinations</p>
-            </a>
-          </li>
+          
           <li className="nav-link">
             <a className="nav-link" href="/add-new">
-              <AddLocationIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
+              <AddCircleIcon style={{ margin: 'auto', paddingRight: '10px' }}/>
               <p>Add New</p>
             </a>
           </li>

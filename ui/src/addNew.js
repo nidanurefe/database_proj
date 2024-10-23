@@ -1,103 +1,115 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import Layout from './layout';
 import './styles/addNew.css';
+import Layout from './layout';
 
 const AddNew = () => {
-  const [locationName, setLocationName] = useState({
-    name: '',
-    category: '',
-    sub_category: '',
-    city : '',
-    country : '',
-    visited_date: '',
-    notes: '',
-    photo_url: '',
-    travelStatus: ''
+  const [movie, setMovie] = useState({
+    title: '',
+    genre: '',
+    releaseDate: '',
+    director: '',
+    rating: '',
   });
 
-
-
+  const [actor, setActor] = useState({
+    name: '',
+    birthdate: '',
+    nationality: '',
+    famousMovies: '',
+  });
 
   return (
     <Layout>
-    <div className="add-travel-container">
-      <h2>Add New</h2>
-      <form className="add-travel-form" >
-        
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          required
-        />
-        <label>Category</label>
-        <input
-          type="text"
-          name="category"
-          placeholder="Category"
-        />
-        
-        
-        <label>City</label>
-        <input
-          type="text"
-          name="city"
-          placeholder="City"
-          required
-        />
-        <label>Visited Date (Leave null if on future routes)</label>
-        <input
-          type="text"
-          name="visitedDate"
-          placeholder="Visited Date"
-        />
+    <div className="add-new-container">
+      <h2>Add Movie and Actor</h2>
+      <div className="form-wrapper">
+        {/* Movie Form */}
+        <form className="form movie-form">
+          <h3>Movie Details</h3>
+          <label>Title</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Movie Title"
+            value={movie.title}
+            onChange={(e) => setMovie({ ...movie, title: e.target.value })}
+            required
+          />
+          <label>Genre</label>
+          <input
+            type="text"
+            name="genre"
+            placeholder="Genre"
+            value={movie.genre}
+            onChange={(e) => setMovie({ ...movie, genre: e.target.value })}
+            required
+          />
+          <label>Release Date</label>
+          <input
+            type="date"
+            name="releaseDate"
+            value={movie.releaseDate}
+            onChange={(e) => setMovie({ ...movie, releaseDate: e.target.value })}
+          />
+          <label>Director</label>
+          <input
+            type="text"
+            name="director"
+            placeholder="Director"
+            value={movie.director}
+            onChange={(e) => setMovie({ ...movie, director: e.target.value })}
+          />
+          <label>Rating</label>
+          <input
+            type="number"
+            name="rating"
+            placeholder="Rating"
+            value={movie.rating}
+            onChange={(e) => setMovie({ ...movie, rating: e.target.value })}
+          />
+          <button type="submit">Save Movie</button>
+        </form>
 
-        
-
-        <label>Notes</label>
-        <textarea
-            name="notes"
-            placeholder="Notes"
-        />
-
-
-      
-
-
-
-        {/* <div className="cover-selection">
-          <h3>Select Cover</h3>
-          <div className="cover-images">
-            {coverImages.map((cover) => (
-              <img
-                key={cover.id}
-                src={cover.src}
-
-                alt={cover.alt}
-                onClick={() => handleCoverSelect(cover.id)}
-                style={{
-                  border: selectedCover === cover.id ? '2px solid blue' : '2px solid transparent',
-                  cursor: 'pointer',
-                  width: '100px',
-                  height: '150px',
-                }}
-              />
-            ))}
-          </div>
-          <div >
-            <label>Or upload your own cover:</label>
-            <br></br>
-            <input type="file" accept="image/*" onChange={handleFileUpload} />
-          </div>
-        </div> */}
-        <button type="submit">Save</button>
-      </form>
+        {/* Actor Form */}
+        <form className="form actor-form">
+          <h3>Actor Details</h3>
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Actor Name"
+            value={actor.name}
+            onChange={(e) => setActor({ ...actor, name: e.target.value })}
+            required
+          />
+          <label>Birthdate</label>
+          <input
+            type="date"
+            name="birthdate"
+            value={actor.birthdate}
+            onChange={(e) => setActor({ ...actor, birthdate: e.target.value })}
+          />
+          <label>Nationality</label>
+          <input
+            type="text"
+            name="nationality"
+            placeholder="Nationality"
+            value={actor.nationality}
+            onChange={(e) => setActor({ ...actor, nationality: e.target.value })}
+          />
+          <label>Famous Movies</label>
+          <textarea
+            name="famousMovies"
+            placeholder="Famous Movies"
+            value={actor.famousMovies}
+            onChange={(e) => setActor({ ...actor, famousMovies: e.target.value })}
+          />
+          <button type="submit">Save Actor</button>
+        </form>
+      </div>
     </div>
     </Layout>
   );
 };
-
 
 export default AddNew;
